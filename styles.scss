@@ -1,23 +1,24 @@
-@charset "UTF-8";
+@import "_variables.scss";
+
 index.css html,
 body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  background: rgb(250, 250, 250);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: $fondo-color;
+  font-family: $font-default;
 }
 
 .navbar-container {
-  background: white;
+  background: $fondo-color-navbar;
   width: 100%;
   height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 3px 6px #b7b7b7;
+  box-shadow: $sombra-navbar;
+
   /*  Para cuando haya scroll  */
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 1;
@@ -28,10 +29,10 @@ body {
   background: none;
 }
 
-.menu-hamburguesa-icon {
+.menu-hamburguesa-icon{
   display: none;
   position: absolute;
-  margin: 0 15px;
+  margin: 0 15px ;
 }
 
 .logo_insta,
@@ -39,10 +40,12 @@ body {
   margin: 0 15px;
   display: flex;
   align-items: center;
+
 }
 
+
 .logo_insta h3 {
-  font-family: "Oleo Script Swash Caps";
+  font-family: $font-logo-insta;
   font-size: 27px;
   cursor: pointer;
 }
@@ -51,13 +54,16 @@ body {
   padding: 8px;
 }
 
+
+
 .buscador-container {
-  background: #efefef;
+  background: $fondo-color-navbar-hover-gris;
   padding: 10px;
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
-  color: #8e8e8e;
+  color: $font-color-buscador;
+
 }
 
 .lupa-icon {
@@ -69,7 +75,7 @@ body {
   border: none;
   display: flex;
   /* flex-grow: 1; */
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: $font-default;
   font-size: 16px;
   height: 24px;
   width: 268px;
@@ -78,7 +84,7 @@ body {
   resize: none;
 }
 
-ul {
+ul{
   display: flex;
   padding: 0px;
   margin: 0px;
@@ -91,11 +97,11 @@ ul button {
   border: none;
   border-radius: 5px;
   background: none;
-  transition: 0.3s ease all;
+  transition: .3s ease all;
 }
 
 div.menu button:hover {
-  background: #efefef;
+  background:$fondo-color-navbar-hover-gris;
 }
 
 .segundo-container {
@@ -116,15 +122,16 @@ li {
 }
 
 .historias {
-  background: white;
+  background: $fondo-color-publicacion;
   padding: 16px 10px;
   margin-bottom: 10px;
   height: 85px;
-  border: 1px solid rgb(219, 219, 219);
+  border: $borde-publicacion;
   border-radius: 8px;
   display: flex;
   align-items: center;
 }
+
 
 .historias ul button {
   padding: 0px 10px;
@@ -140,10 +147,10 @@ li {
 .agregar-comentario-container button {
   margin: 0px;
   padding: 2px;
-}
 
-.usuario-historia {
-  color: rgb(38, 38, 38);
+}
+.usuario-historia{
+  color: $font-color-negro;
   font-size: 12px;
 }
 
@@ -154,48 +161,49 @@ li {
   margin: 4px 0;
   width: 66px;
   height: 66px;
-  background: linear-gradient(to right, #f99b4a, #c92d8c);
+  background: $fondo-color-gradient-historia;
   border-radius: 50%;
 }
-
-.historias .foto-usuario {
+.historias .foto-usuario{
   border-radius: 50%;
   background: white; /*Por si se usa un icono*/
   width: 56px;
   height: 56px;
-  border: 2px solid white;
+  border: $borde-blanco-historia;
+
 }
 
-.circulo-live span.foto-usuario {
+.circulo-live span.foto-usuario{
   font-size: 36px !important;
   width: 36px;
   height: 36px;
 }
 
-.cirulo-live-negro {
+.cirulo-live-negro{
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  border: 2px solid white;
-  background: black;
+  border: $borde-blanco-historia;
+  background: $fondo-color-historia-live;
   width: 56px;
   height: 56px;
 }
-
-.live {
+.live{
   position: absolute;
   bottom: 17px;
-  background: rgb(255, 1, 105);
+  background: $fondo-color-historia-live-recuadro;
   font-size: 8px;
   font-weight: 600;
-  color: white;
+  color: $font-color-blanco;
   vertical-align: baseline;
   line-height: 12px;
   border-radius: 4px;
-  border: 2px solid white;
+  border: $borde-blanco-historia;
   padding: 0 4px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: $font-default;
+
+
 }
 
 .post-container {
@@ -203,17 +211,17 @@ li {
   background: none;
 }
 
-.post-container ul {
-  flex-direction: column;
-  height: 100%;
-}
-
+.post-container ul{
+    flex-direction: column;
+    height: 100%;
+  }
 .post {
   margin-bottom: 10px;
   width: 100%;
-  border: 1px solid rgb(219, 219, 219);
+  border: $borde-publicacion;
   border-radius: 8px;
-  background: white;
+  background: $fondo-color-publicacion;
+
 }
 
 .post-top {
@@ -253,6 +261,7 @@ li {
 
 .post-foto-opciones span {
   padding: 6px;
+
 }
 
 .favorite {
@@ -283,7 +292,7 @@ li {
 
 .comentarios,
 .info-hora {
-  color: rgb(142, 142, 142);
+  color: $font-color-gris-defalut;
   cursor: pointer;
   margin: 8px 0 !important;
 }
@@ -293,7 +302,7 @@ li {
 }
 
 .agregar-comentario-container {
-  border-top: 1px solid rgb(239, 239, 239);
+  border-top: $borde-publicacion-separador;
   padding: 4px 16px 4px 12px;
   display: flex;
   align-items: center;
@@ -308,7 +317,7 @@ li {
   border: none;
   display: flex;
   flex-grow: 1;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: $font-default;
   height: 18px;
   max-height: 80px;
   outline: none;
@@ -321,14 +330,15 @@ li {
 .agregar-comentario-container button,
 .boton-cambiar,
 .boton-seguir {
-  color: rgb(0, 149, 246);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: $font-color-celeste-boton;
+  font-family: $font-default;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   background: none;
   border: none;
   padding: 0;
+
 }
 
 .sugerencias {
@@ -338,6 +348,7 @@ li {
 .config_perfil,
 .datos_usuario {
   display: flex;
+
 }
 
 .config_perfil {
@@ -357,13 +368,13 @@ li {
 .info-comentarios strong,
 .usuario-id,
 .usuario-nombre {
-  color: rgb(38, 38, 38);
+  color: $font-color-negro;
   font-weight: 600;
   cursor: pointer !important;
 }
 
 .usuario-id-botton {
-  color: rgb(142, 142, 142);
+  color: $font-color-gris-defalut;
   font-weight: 400;
 }
 
@@ -378,7 +389,7 @@ li {
 }
 
 #sugerencias-para-ti {
-  color: rgb(142, 142, 142);
+  color: $font-color-gris-defalut;
   font-size: 14px;
   font-weight: 600;
   padding: 0;
@@ -393,6 +404,7 @@ li {
 }
 
 .sugerencia-usuarios div {
+    // color: $font-color-negro;
   padding: 0;
 }
 
@@ -409,7 +421,7 @@ li {
   display: flex;
   flex-direction: column;
   margin: 12px 0 16px 0;
-  color: rgb(199, 199, 199);
+  color: $font-color-informacion;
   font-size: 12px;
   font-weight: 400;
 }
@@ -428,10 +440,11 @@ li {
 
 .informacion-container ul li:not(:last-child) ::after {
   /*Agrega el punto. Se puede escribir directamente el simbolo*/
-  content: "·";
+  content: '\00B7';
   margin: 0 0.25em;
   display: inline-block;
 }
+
 
 .informacion-container span {
   text-transform: uppercase;
@@ -439,31 +452,41 @@ li {
 }
 
 @media screen and (max-width: 900px) {
+
   .sugerencias {
     display: none;
   }
+
   .publicaciones {
     display: block;
     left: 50%;
     margin: 0;
   }
+
   .buscador-container {
     display: none;
   }
+
 }
+
 @media screen and (max-width: 600px) {
-  .logo_insta {
+  .logo_insta{
     width: 100%;
   }
   .menu,
-.expand_more {
+  .expand_more{
     display: none;
   }
-  .menu-hamburguesa-icon {
+
+  .menu-hamburguesa-icon{
     display: inline-block;
   }
-  .logo_insta {
+
+  .logo_insta{
     position: relative;
     justify-content: center;
+ 
   }
-}/*# sourceMappingURL=styles.css.map */
+
+}
+

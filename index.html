@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <link href='https://fonts.googleapis.com/css?family=Oleo Script Swash Caps' rel='stylesheet' />
-    <link href='index.css' rel='stylesheet' />
+    <link href='styles.css' rel='stylesheet' />
 </head>
 
 <body>
@@ -20,7 +20,7 @@
 
         <div class="buscador-container">
             <span class="material-symbols-outlined lupa-icon">search</span>
-            <input id="buscador" placeholder="Buscar" type="text"></input>
+            <input class="buscador" placeholder="Buscar" type="text"></input>
         </div>
 
         <div class="menu">
@@ -53,6 +53,15 @@
             <div class="historias">
                 <ul>
                     <button>
+                        <div class="circulo-historia circulo-live">
+                            <div class="cirulo-live-negro">
+                                <span class="material-symbols-outlined foto-usuario">face</span>
+                            </div>
+                            <div class="live">DIRECTO</div>
+                        </div>
+                        <div class="usuario-historia">Usuario</div>
+                    </button>
+                    <button>
                         <div class="circulo-historia" >
                             <img class="foto-usuario" src="imagen6JPG.jpg"></img>
                         </div>
@@ -76,12 +85,7 @@
                         </div>
                         <div class="usuario-historia">Usuario</div>
                     </button>
-                    <button>
-                        <div class="circulo-historia">
-                            <span class="material-symbols-outlined foto-usuario"> face </span>
-                        </div>
-                        <div class="usuario-historia">Usuario</div>
-                    </button>
+                    
                 </ul>
             </div>
             <div class="post-container">
