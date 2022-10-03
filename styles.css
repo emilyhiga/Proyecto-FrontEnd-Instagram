@@ -8,6 +8,11 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
+.material-symbols-outlined {
+  cursor: pointer;
+  background: none;
+}
+
 .navbar-container {
   background: white;
   width: 100%;
@@ -22,36 +27,27 @@ body {
   top: 0;
   z-index: 1;
 }
-
-.material-symbols-outlined {
-  cursor: pointer;
-  background: none;
-}
-
-.menu-hamburguesa-icon {
+.navbar-container .icono-menu-hamburguesa {
   display: none;
   position: absolute;
   margin: 0 15px;
+  z-index: 1;
 }
-
-.logo_insta,
-.menu {
+.navbar-container .logo_insta,
+.navbar-container .menu {
   margin: 0 15px;
   display: flex;
   align-items: center;
 }
-
-.logo_insta h3 {
+.navbar-container .logo_insta h3 {
   font-family: "Oleo Script Swash Caps";
   font-size: 27px;
   cursor: pointer;
 }
-
-.expand_more {
+.navbar-container .logo_insta .icono-expand_more {
   padding: 8px;
 }
-
-.buscador-container {
+.navbar-container .buscador-container {
   background: #efefef;
   padding: 10px;
   border-radius: 10px;
@@ -59,16 +55,13 @@ body {
   justify-content: space-between;
   color: #8e8e8e;
 }
-
-.lupa-icon {
+.navbar-container .buscador-container .lupa-icon {
   margin-right: 10px;
 }
-
-.buscador {
+.navbar-container .buscador-container .buscador {
   background: none;
   border: none;
   display: flex;
-  /* flex-grow: 1; */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 16px;
   height: 24px;
@@ -77,13 +70,35 @@ body {
   padding: 0;
   resize: none;
 }
+.navbar-container .menu button:hover {
+  background: #efefef;
+}
+@media screen and (max-width: 900px) {
+  .navbar-container .logo_insta {
+    width: 100%;
+    position: relative;
+    justify-content: center;
+  }
+  .navbar-container .menu,
+.navbar-container .icono-expand_more {
+    display: none;
+  }
+  .navbar-container .icono-menu-hamburguesa {
+    display: inline-block;
+  }
+  .navbar-container .buscador-container {
+    display: none;
+  }
+}
 
 ul {
   display: flex;
   padding: 0px;
   margin: 0px;
 }
-
+ul li {
+  list-style-type: none;
+}
 ul button {
   margin: 0 2px;
   padding: 10px 15px;
@@ -92,62 +107,45 @@ ul button {
   border-radius: 5px;
   background: none;
   transition: 0.3s ease all;
-}
-
-div.menu button:hover {
-  background: #efefef;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 .segundo-container {
   position: relative;
   display: flex;
-  margin-top: 26px;
   justify-content: center;
+  margin-top: 26px;
   background: none;
+  color: rgb(38, 38, 38);
 }
-
-li {
-  list-style-type: none;
-}
-
-.publicaciones {
+.segundo-container .publicaciones {
   width: 470px;
   margin-right: 32px;
 }
-
-.historias {
-  background: white;
+.segundo-container .publicaciones .historias {
+  display: flex;
+  align-items: center;
   padding: 16px 10px;
   margin-bottom: 10px;
   height: 85px;
+  background: white;
   border: 1px solid rgb(219, 219, 219);
   border-radius: 8px;
-  display: flex;
-  align-items: center;
 }
-
-.historias ul button {
+.segundo-container .publicaciones .historias ul button {
   padding: 0px 10px;
   position: relative;
 }
-
-.historias ul button .material-symbols-outlined,
-.foto_perfil {
+.segundo-container .publicaciones .historias ul button .material-symbols-outlined {
   font-size: 56px;
 }
-
-.usuario-historia,
-.agregar-comentario-container button {
+.segundo-container .publicaciones .historias ul button .usuario-historia {
   margin: 0px;
   padding: 2px;
-}
-
-.usuario-historia {
   color: rgb(38, 38, 38);
   font-size: 12px;
 }
-
-.circulo-historia {
+.segundo-container .publicaciones .historias ul button .circulo-historia {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -157,22 +155,20 @@ li {
   background: linear-gradient(to right, #f99b4a, #c92d8c);
   border-radius: 50%;
 }
-
-.historias .foto-usuario {
+.segundo-container .publicaciones .historias ul button .circulo-historia .foto-usuario {
   border-radius: 50%;
-  background: white; /*Por si se usa un icono*/
+  background: white;
+  /*Por si se usa un icono*/
   width: 56px;
   height: 56px;
   border: 2px solid white;
 }
-
-.circulo-live span.foto-usuario {
-  font-size: 36px !important;
+.segundo-container .publicaciones .historias ul button .circulo-live .foto-usuario {
+  font-size: 36px;
   width: 36px;
   height: 36px;
 }
-
-.cirulo-live-negro {
+.segundo-container .publicaciones .historias ul button .circulo-live .cirulo-live-negro {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -182,8 +178,7 @@ li {
   width: 56px;
   height: 56px;
 }
-
-.live {
+.segundo-container .publicaciones .historias ul button .circulo-live .live {
   position: absolute;
   bottom: 17px;
   background: rgb(255, 1, 105);
@@ -195,28 +190,23 @@ li {
   border-radius: 4px;
   border: 2px solid white;
   padding: 0 4px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
-
-.post-container {
+.segundo-container .publicaciones .post-container {
   margin-top: 16px;
   background: none;
 }
-
-.post-container ul {
+.segundo-container .publicaciones .post-container ul {
   flex-direction: column;
   height: 100%;
 }
-
-.post {
+.segundo-container .publicaciones .post-container ul .post {
   margin-bottom: 10px;
   width: 100%;
   border: 1px solid rgb(219, 219, 219);
   border-radius: 8px;
   background: white;
 }
-
-.post-top {
+.segundo-container .publicaciones .post-container ul .post .post-top {
   display: flex;
   align-items: center;
   justify-content: space-between !important;
@@ -224,86 +214,70 @@ li {
   border: none;
   background-color: none;
 }
-
-.usuairo-post-info {
+.segundo-container .publicaciones .post-container ul .post .post-top .usuairo-post-info {
   display: flex;
   align-items: center;
 }
-
-.usuario-foto-post {
+.segundo-container .publicaciones .post-container ul .post .post-top .usuairo-post-info .usuario-nombre {
+  font-weight: 600;
+  cursor: pointer;
+}
+.segundo-container .publicaciones .post-container ul .post .post-top .usuairo-post-info .usuario-foto-post {
   font-size: 42px;
 }
-
-.opciones {
+.segundo-container .publicaciones .post-container ul .post .post-top .opciones {
   right: 10px;
 }
-
-.post-foto {
+.segundo-container .publicaciones .post-container ul .post .post-foto {
   height: auto;
   max-width: 100%;
 }
-
-.post-button strong {
-  font-weight: 600;
-}
-
-.post-foto-opciones {
+.segundo-container .publicaciones .post-container ul .post .post-button .post-foto-opciones {
   padding: 0 6px;
 }
-
-.post-foto-opciones span {
+.segundo-container .publicaciones .post-container ul .post .post-button .post-foto-opciones .material-symbols-outlined {
   padding: 6px;
 }
-
-.favorite {
-  padding-left: 0 !important;
-}
-
-.navigation {
+.segundo-container .publicaciones .post-container ul .post .post-button .post-foto-opciones .icono-navigation {
   transform: rotate(45deg);
   font-size: 26px;
 }
-
-.add-home {
-  margin-left: 298px !important;
+.segundo-container .publicaciones .post-container ul .post .post-button .post-foto-opciones .icono-add-home {
+  margin-left: 298px;
   transform: rotate(180deg);
 }
-
-.info-like,
-.info-comentarios {
-  padding: 0 12px !important;
+.segundo-container .publicaciones .post-container ul .post .post-button .info-like,
+.segundo-container .publicaciones .post-container ul .post .post-button .info-comentarios {
+  padding: 0 12px;
   margin: 0 0 8px 0;
+  font-size: 14px;
 }
-
-.info-like,
-.info-comentarios,
-.agregar-comentario-container {
-  font-size: 14px !important;
+.segundo-container .publicaciones .post-container ul .post .post-button .info-like strong,
+.segundo-container .publicaciones .post-container ul .post .post-button .info-comentarios strong {
+  font-weight: 600;
+  cursor: pointer;
 }
-
-.comentarios,
-.info-hora {
+.segundo-container .publicaciones .post-container ul .post .post-button .info-comentarios .comentarios,
+.segundo-container .publicaciones .post-container ul .post .post-button .info-comentarios .info-hora {
   color: rgb(142, 142, 142);
   cursor: pointer;
-  margin: 8px 0 !important;
+  margin: 8px 0;
 }
-
-.info-hora {
+.segundo-container .publicaciones .post-container ul .post .post-button .info-comentarios .info-hora {
   font-size: 10px;
 }
-
-.agregar-comentario-container {
+.segundo-container .publicaciones .post-container ul .post .post-button .agregar-comentario-container {
   border-top: 1px solid rgb(239, 239, 239);
   padding: 4px 16px 4px 12px;
   display: flex;
   align-items: center;
+  font-size: 14px;
+  /*Ver si sirve*/
 }
-
-.sentiment_satisfied {
+.segundo-container .publicaciones .post-container ul .post .post-button .agregar-comentario-container .icono-sentiment_satisfied {
   padding: 8px 12px 8px 0;
 }
-
-.agregar-comentario-container textarea {
+.segundo-container .publicaciones .post-container ul .post .post-button .agregar-comentario-container textarea {
   background: none;
   border: none;
   display: flex;
@@ -317,95 +291,88 @@ li {
   resize: none;
   /*Sirve para sacar la opcion de agrandar el cuadro de texto*/
 }
-
-.agregar-comentario-container button,
-.boton-cambiar,
-.boton-seguir {
+.segundo-container .publicaciones .post-container ul .post .post-button .agregar-comentario-container button {
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  background: none;
   color: rgb(0, 149, 246);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  background: none;
-  border: none;
-  padding: 0;
 }
-
-.sugerencias {
+.segundo-container .sugerencias {
   width: 319px;
 }
-
-.config_perfil,
-.datos_usuario {
-  display: flex;
+.segundo-container .sugerencias .boton-cambiar,
+.segundo-container .sugerencias .boton-seguir {
+  padding: 0px;
+  border: none;
+  background: none;
+  color: rgb(0, 149, 246);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
 }
-
-.config_perfil {
-  align-items: center;
-  padding: 16px 0 10px 0;
-}
-
-.datos_usuario {
+.segundo-container .sugerencias .datos_usuario {
   flex-direction: column;
   font-size: 14px;
   height: 32px;
   width: 100%;
   align-items: baseline !important;
 }
-
-.info-like,
-.info-comentarios strong,
-.usuario-id,
-.usuario-nombre {
-  color: rgb(38, 38, 38);
+.segundo-container .sugerencias .datos_usuario .usuario-id {
   font-weight: 600;
-  cursor: pointer !important;
+  cursor: pointer;
 }
-
-.usuario-id-botton {
+.segundo-container .sugerencias .datos_usuario .usuario-id-botton {
   color: rgb(142, 142, 142);
   font-weight: 400;
 }
-
-.sugerencias-para-ti-container {
-  justify-content: space-between;
-}
-
-.sugerencias-container div {
+.segundo-container .sugerencias .config_perfil {
   display: flex;
   align-items: center;
+  padding: 16px 0 10px 0;
+}
+.segundo-container .sugerencias .config_perfil .foto_perfil {
+  font-size: 56px;
+}
+.segundo-container .sugerencias .sugerencias-container {
+  font-weight: 600;
+}
+.segundo-container .sugerencias .sugerencias-container .sugerencias-para-ti-container,
+.segundo-container .sugerencias .sugerencias-container .sugerencia-usuarios {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.segundo-container .sugerencias .sugerencias-container .sugerencia-usuarios {
   padding: 8px 0px;
 }
-
-#sugerencias-para-ti {
-  color: rgb(142, 142, 142);
-  font-size: 14px;
-  font-weight: 600;
+.segundo-container .sugerencias .sugerencias-container .sugerencia-usuarios div {
   padding: 0;
 }
-
-#ver-todo {
-  color: rgb(39, 39, 39);
-  font-size: 12px;
-  font-weight: 600;
-  padding: 0;
-  cursor: pointer;
-}
-
-.sugerencia-usuarios div {
-  padding: 0;
-}
-
-.sugerencia-usuarios .foto_perfil {
+.segundo-container .sugerencias .sugerencias-container .sugerencia-usuarios .foto_perfil {
   font-size: 32px;
   padding-right: 10px;
 }
-
-.sugerencia-usuarios .usuario-id-botton {
+.segundo-container .sugerencias .sugerencias-container .sugerencia-usuarios .usuario-id-botton {
   font-size: 12px;
 }
-
-.informacion-container {
+.segundo-container .sugerencias .sugerencias-container .sugerencias-para-ti-container {
+  padding: 4px 0px;
+}
+.segundo-container .sugerencias .sugerencias-container .sugerencias-para-ti-container #sugerencias-para-ti {
+  font-size: 14px;
+  color: rgb(142, 142, 142);
+}
+.segundo-container .sugerencias .sugerencias-container .sugerencias-para-ti-container #ver-todo {
+  font-size: 12px;
+  cursor: pointer;
+}
+.segundo-container .sugerencias .informacion-container {
   display: flex;
   flex-direction: column;
   margin: 12px 0 16px 0;
@@ -413,57 +380,32 @@ li {
   font-size: 12px;
   font-weight: 400;
 }
-
-.informacion-container ul {
+.segundo-container .sugerencias .informacion-container ul {
   flex-wrap: wrap;
 }
-
-.informacion-container li {
+.segundo-container .sugerencias .informacion-container ul li {
   cursor: pointer;
 }
-
-.informacion-container ul li :hover {
+.segundo-container .sugerencias .informacion-container ul li:hover {
   text-decoration: underline;
 }
-
-.informacion-container ul li:not(:last-child) ::after {
+.segundo-container .sugerencias .informacion-container ul li:not(:last-child)::after {
   /*Agrega el punto. Se puede escribir directamente el simbolo*/
   content: "·";
   margin: 0 0.25em;
   display: inline-block;
 }
-
-.informacion-container span {
+.segundo-container .sugerencias .informacion-container span {
   text-transform: uppercase;
   margin-top: 16px;
 }
-
 @media screen and (max-width: 900px) {
-  .sugerencias {
+  .segundo-container .sugerencias {
     display: none;
   }
-  .publicaciones {
+  .segundo-container .publicaciones {
     display: block;
     left: 50%;
     margin: 0;
-  }
-  .buscador-container {
-    display: none;
-  }
-}
-@media screen and (max-width: 600px) {
-  .logo_insta {
-    width: 100%;
-  }
-  .menu,
-.expand_more {
-    display: none;
-  }
-  .menu-hamburguesa-icon {
-    display: inline-block;
-  }
-  .logo_insta {
-    position: relative;
-    justify-content: center;
   }
 }/*# sourceMappingURL=styles.css.map */
